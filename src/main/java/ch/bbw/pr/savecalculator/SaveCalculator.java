@@ -10,11 +10,14 @@ import java.math.BigDecimal;
  * @version 1.0.0
  */
 public class SaveCalculator {
+	private int max = Integer.MAX_VALUE;
+	private int min = Integer.MIN_VALUE;
+
 	
 	public int summe(int summand1, int summand2) throws ArithmeticException
 	{
 		long value = (long) summand1 + (long) summand2;
-		if ((value > Integer.MAX_VALUE) || (value < Integer.MIN_VALUE)){
+		if ((value > max) || (value < min)){
 			throw new ArithmeticException("This calculation causes an overflow");
 		}
 		return summand1 + summand2;
@@ -24,7 +27,7 @@ public class SaveCalculator {
 	public int subtraktion(int value1, int value2)
 	{
 		long value = (long) value1 - (long) value2;
-		if ((value > Integer.MAX_VALUE) || (value < Integer.MIN_VALUE)){
+		if ((value > max) || (value < min)){
 			throw new ArithmeticException("This calculation causes an overflow");
 		}
 		return value1 - value2;
@@ -32,12 +35,9 @@ public class SaveCalculator {
 	public double division(int value1, int value2) {
 		return value1 / value2;
 	}
-	private double multiplication(Integer value1, Integer value2) {
-		int max = Integer.MAX_Value;
-		int min = Integer.MIN_VALUE;
-
-		BigDecimal value = BigDecimal.valueOf(value1).multiply(BigDecimal.valueOf(value2));
-		if ((value.compareTo(BigDecimal.valueOf(Integer.MAX_VALUE)) < 0 ) || (value < Integer.MIN_VALUE)){
+	private double multiplication(Integer value1, Integer value2) {		
+		double value = value1 * value2;
+		if ((value > Double.MAX_VALUE ) || (value < Double.MIN_VALUE)){
 			throw new ArithmeticException("This calculation causes an overflow");
 		}
 		return value;
