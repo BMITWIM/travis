@@ -1,14 +1,16 @@
 package ch.bbw.pr.savecalculator;
+import java.math.BigDecimal;
 
 /**
  * SaveCalculator
  * Rechnet 'vorsichtig' mit Zahlen.
  * Warnt, wenn etwas nicht geht.
  *   
- * @author Peter Rutschmann
- * @version 0.0.1
+ * @author Melissa Wilkins
+ * @version 1.0.0
  */
 public class SaveCalculator {
+	
 	public int summe(int summand1, int summand2) throws ArithmeticException
 	{
 		long value = (long) summand1 + (long) summand2;
@@ -31,7 +33,14 @@ public class SaveCalculator {
 		return value1 / value2;
 	}
 	private double multiplication(Integer value1, Integer value2) {
-		return value1 * value2;
+		int max = Integer.MAX_Value;
+		int min = Integer.MIN_VALUE;
+
+		BigDecimal value = BigDecimal.valueOf(value1).multiply(BigDecimal.valueOf(value2));
+		if ((value.compareTo(BigDecimal.valueOf(Integer.MAX_VALUE)) < 0 ) || (value < Integer.MIN_VALUE)){
+			throw new ArithmeticException("This calculation causes an overflow");
+		}
+		return value;
 	}
 	//pow
 	//sqrt
