@@ -32,6 +32,14 @@ public class SaveCalculator {
 		}
 		return value1 - value2;
 	}
+
+	public double division(int value1, int value2) {
+		if (value2 == 0){
+			throw new ArithmeticException("Division with 0 causes an error");
+		}
+		double value = value1 / value2;
+		return value;
+	}
 	
 	private double multiplication(Integer value1, Integer value2) throws ArithmeticException
 	{		
@@ -41,6 +49,8 @@ public class SaveCalculator {
 		}
 		return value;
 	}
+
+
 	
 	//sqrt
 	
