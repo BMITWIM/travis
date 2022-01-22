@@ -66,7 +66,17 @@ public class SaveCalculatorTest {
         }
         
     }
-
+    
+    @Test
+    public void testDivisionNit0(){
+        int zero = 0;
+        try {
+            calculator.division(1, zero);
+            fail();
+        } catch (ArithmeticException e) {
+            assertEquals("Division with 0 causes an error", e.getMessage());
+        }
+    }
     
     @Test
     public void testMultiplication() throws Exception{
