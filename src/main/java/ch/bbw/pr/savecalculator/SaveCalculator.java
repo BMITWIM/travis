@@ -32,9 +32,7 @@ public class SaveCalculator {
 		}
 		return value1 - value2;
 	}
-	public double division(int value1, int value2) {
-		return value1 / value2;
-	}
+	
 	private double multiplication(Integer value1, Integer value2) {		
 		double value = value1 * value2;
 		if ((value > Double.MAX_VALUE ) || (value < Double.MIN_VALUE)){
