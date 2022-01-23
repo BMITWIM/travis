@@ -20,8 +20,7 @@ public class App
         SaveCalculator calculator = new SaveCalculator();
         System.out.println("10 + 10: " + calculator.summe(10, 10));
         System.out.println("MAX_VALUE + MAX_VALUE: " + calculator.summe(Integer.MAX_VALUE, Integer.MAX_VALUE));
-        System.out.println("End");
-        
+        System.out.println("End");        
         
     }
 }
