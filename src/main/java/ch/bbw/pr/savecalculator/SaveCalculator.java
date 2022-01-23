@@ -1,5 +1,4 @@
 package ch.bbw.pr.savecalculator;
-import java.math.BigDecimal;
 
 /**
  * SaveCalculator
@@ -49,9 +48,4 @@ public class SaveCalculator {
 		}
 		return value;
 	}
-
-
-	
-	//sqrt
-	
 }
