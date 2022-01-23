@@ -14,8 +14,7 @@ public class SaveCalculatorTest {
     int max;
     int min;
     int positiveZahl;
-    int negativeZahl;
-    int zero;
+    int negativeZahl;    
 
     @Before
     public void setup(){
@@ -24,8 +23,6 @@ public class SaveCalculatorTest {
         min = Integer.MIN_VALUE;
         positiveZahl = 28;
         negativeZahl = -42;
-        zero = 0;
-
     }
     @After
     public void teardown(){
@@ -46,7 +43,7 @@ public class SaveCalculatorTest {
     {
 
         /* min + 0 = min ok */
-        int result = calculator.summe(min, zero);
+        int result = calculator.summe(min, 0);
         assertEquals(min, result);        
     }
 
@@ -216,7 +213,7 @@ public class SaveCalculatorTest {
     public void testDivisionMit0(){        
         
         try {
-            calculator.division(12, zero);
+            calculator.division(12, 0);
             fail();
         } catch (ArithmeticException e) {
             assertEquals("Division with 0 causes an error", e.getMessage());
