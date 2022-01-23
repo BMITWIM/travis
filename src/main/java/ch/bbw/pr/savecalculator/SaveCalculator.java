@@ -6,7 +6,7 @@ package ch.bbw.pr.savecalculator;
  * Warnt, wenn etwas nicht geht.
  *   
  * @author Melissa Wilkins
- * @version 1.1
+ * @version 2.3
  */
 public class SaveCalculator {
 	private int max = Integer.MAX_VALUE;
