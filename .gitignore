@@ -7,7 +7,7 @@
 .project
 
 #build files
-target/
+*target/
 
 # Log file
 *.log
