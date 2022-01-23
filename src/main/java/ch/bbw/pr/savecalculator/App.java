@@ -21,6 +21,7 @@ public class App
         System.out.println("10 + 10: " + calculator.summe(10, 10));
         System.out.println("MAX_VALUE + MAX_VALUE: " + calculator.summe(Integer.MAX_VALUE, Integer.MAX_VALUE));
         System.out.println("End");
+        /* Github actions test */
         
     }
 }
