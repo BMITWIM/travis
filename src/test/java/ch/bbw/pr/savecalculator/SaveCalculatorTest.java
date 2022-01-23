@@ -71,7 +71,8 @@ public class SaveCalculatorTest {
         assertEquals(max - 1, result);
     }
 
-    public void tesAdditionMaxund0() 
+    @Test
+    public void testAdditionMaxund0() 
     {
         /* max + 0 = max ok */
         int result = calculator.summe(max, 0);
@@ -182,10 +183,37 @@ public class SaveCalculatorTest {
         assertEquals(0, result);      
         
     }
-    
+
+    /* Division */    
     @Test
-    public void testDivisionMit0(){
-        
+    public void testDivisionmitPositiven(){
+        double result = calculator.division(positiveZahl, positiveZahl);
+
+        assertEquals(result, 1, 0.0001);
+    }
+
+    @Test
+    public void testDivisionmiNegativen(){
+        double result = calculator.division(negativeZahl, negativeZahl);
+
+        assertEquals(result, 1, 0.0001);
+    }
+
+    public void testMitPositiveundNegative(){
+        double result = calculator.division(negativeZahl, positiveZahl);
+
+        assertEquals(result, 1.5, 0.0001);
+    }
+
+    @Test
+    public void testDivisionund0() {
+        double result = calculator.division(0, positiveZahl);
+
+        assertEquals(0, result, 0);
+    }
+
+    @Test
+    public void testDivisionMit0(){        
         
         try {
             calculator.division(12, zero);
@@ -193,6 +221,35 @@ public class SaveCalculatorTest {
         } catch (ArithmeticException e) {
             assertEquals("Division with 0 causes an error", e.getMessage());
         }
+    }
+
+    @Test
+    public void testDivisionMaxdurch1(){
+        double result = calculator.division(max, 1);
+
+        assertEquals(result, max, 0.000001);
+
+    }
+
+    @Test
+    public void testDivisionMindurch1(){
+        double result = calculator.division(min, 1);
+
+        assertEquals(result, min, 0.000001);
+    }
+
+    @Test
+    public void testDivisionMindurchMin(){
+        double result = calculator.division(min, min);
+
+        assertEquals(result, 1, 0);
+    }
+    
+    @Test
+    public void testDivisionMaxdurchMax(){
+        double result = calculator.division(max, max);
+
+        assertEquals(result, 1, 0);
     }
     
     @Test
