@@ -46,7 +46,7 @@ public class SaveCalculatorTest {
     {
 
         /* min + 0 = min ok */
-        int result = calculator.summe(min, 0);
+        int result = calculator.summe(min, zero);
         assertEquals(min, result);        
     }
 
@@ -179,7 +179,7 @@ public class SaveCalculatorTest {
     public void testNegativeminusNegative(){
         /* zwei positive zahlen subtrahieren */
         int result = calculator.subtraktion(negativeZahl, negativeZahl);
-        assertEquals(0, result);
+        assertEquals(0, result);      
         
     }
     

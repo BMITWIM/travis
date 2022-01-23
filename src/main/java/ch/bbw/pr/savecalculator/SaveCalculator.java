@@ -13,7 +13,7 @@ public class SaveCalculator {
 	private int min = Integer.MIN_VALUE;
 
 	
-	public int summe(int summand1, int summand2) throws ArithmeticException
+	protected int summe(int summand1, int summand2) throws ArithmeticException
 	{
 		long value = (long) summand1 + (long) summand2;
 		if ((value > max) || (value < min)){
