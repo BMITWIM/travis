@@ -235,8 +235,21 @@ public class SaveCalculatorTest {
     public void testDivisionMindurch1(){
         double result = calculator.division(min, 1);
 
-        assertEquals(result, max, 0.000001);
+        assertEquals(result, min, 0.000001);
+    }
 
+    @Test
+    public void testDivisionMindurchMin(){
+        double result = calculator.division(min, min);
+
+        assertEquals(result, 1, 0);
+    }
+    
+    @Test
+    public void testDivisionMaxdurchMax(){
+        double result = calculator.division(max, max);
+
+        assertEquals(result, 1, 0);
     }
     
     @Test
