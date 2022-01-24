@@ -6,7 +6,7 @@
 
   <groupId>ch.bbw.pr.savecalculator</groupId>
   <artifactId>SaveCalculator</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>2.3-SNAPSHOT</version>
 
   <name>SaveCalculator</name>
   <url>http://www.bbw.ch</url>
@@ -14,6 +14,7 @@
   <developerConnection>scm:git:https://github.com/BMITWIM/travis.git</developerConnection>
   </scm>
   <properties>
+    <project.scm.id>github</project.scm.id>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>13</maven.compiler.source>
     <maven.compiler.target>13</maven.compiler.target>
@@ -27,7 +28,14 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
+  
+    <distributionManagement>
+      <repository>
+        <id>github</id>
+        <name>GitHub</name>
+        <url>https://github.com/BMITWIM/travis.git</url>  
+      </repository>
+    </distributionManagement>
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
